@@ -20,13 +20,13 @@ Teclado hexagonal interactivo para el sistema de temperamento igual de 41 notas 
 - **Soporte completo de teclado QWERTY** (41 teclas + controles)
 - **Soporte multi-touch** para dispositivos móviles
 
-## 🚀 Uso
+## Uso
 
 ### Online
 Simplemente abre `index.html` en tu navegador web.
 
 
-## 🎼 Escalas incluidas (trabajo en proceso)
+## Escalas incluidas (trabajo en proceso)
 
 ### Modos Griegos (adaptados a 41-TET)
 - **Jónico (Mayor)**: Do-Re-Mi-Fa-Sol-La-Si (intervalos: 7-7-3-7-7-7-3)
@@ -45,7 +45,7 @@ Simplemente abre `index.html` en tu navegador web.
 - **Blues**: Escala blues de 6 notas
 - **Armónica Menor**: Escala armónica menor de 7 notas
 
-## ⌨️ Controles
+## Controles
 
 ### Ratón / Touch
 - **Clic/Tap en tecla**: Reproducir nota
@@ -107,7 +107,7 @@ Simplemente abre `index.html` en tu navegador web.
 - **-2 octavas** hasta **+2 octavas**
 - Rango total: 5 octavas completas (205 notas)
 
-## 🎵 Teoría del 41-TET
+## Teoría del 41-TET
 
 ### Intervalos en 41-TET:
 - **1 paso** = 1200¢ / 41 ≈ **29.27 centavos**
@@ -117,7 +117,7 @@ Simplemente abre `index.html` en tu navegador web.
 - **Quinta Justa** ≈ 24 pasos ≈ 702.4 cents
 - **Octava** = 41 pasos = 1200 cents (exacto)
 
-## 🌐 GitHub Pages
+## GitHub Pages
 
 Este proyecto está desplegado en GitHub Pages:
 https://totopo27.github.io/teclado-microtonal-41tet_v2/
