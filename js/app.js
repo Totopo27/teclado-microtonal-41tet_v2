@@ -1,5 +1,5 @@
 // js/app.js
-// Inicialización y gestión de eventos para 41-TET
+// Inicialización y gestión de eventos para 41-TET v2
 
 document.addEventListener('DOMContentLoaded', function() {
   // Generar teclado al cargar
@@ -72,16 +72,18 @@ document.addEventListener('DOMContentLoaded', function() {
     updateScaleDisplay();
   });
 
-  // Mapeo QWERTY para 41 notas
+  // Mapeo QWERTY para 41 notas - ACTUALIZADO PARA V2
+  // Fila superior usa las teclas sin 'b', fila inferior usa las teclas con 'b'
   const keyMap = {
-    '1': '0b', '2': '1b', '3': '2b', '4': '3b', '5': '4b',
-    '6': '5b', '7': '6b', '8': '7b', '9': '8b', '0': '9b',
-    'q': '10b', 'w': '11b', 'e': '12b', 'r': '13b', 't': '14b',
-    'y': '15b', 'u': '16b', 'i': '17m', 'o': '18m', 'p': '19m',
-    'a': '20m', 's': '21m', 'd': '22m', 'f': '23m', 'g': '24m',
-    'h': '25m', 'j': '26m', 'k': '27m', 'l': '28m', 'ñ': '29m', ';': '29m',
-    'z': '30m', 'x': '31m', 'c': '32m', 'v': '33m', 'b': '34m', 'n': '35m',
-    'm': '36m', ',': '37m', '.': '38m', '/': '39m', '-': '40m'
+    // Fila superior (teclas sin sufijo)
+    '1': '0', '2': '1', '3': '2', '4': '3', '5': '4',
+    '6': '5', '7': '6', '8': '7', '9': '8', '0': '9',
+    'q': '10', 'w': '11', 'e': '12', 'r': '13', 't': '14',
+    'y': '15', 'u': '16', 'i': '17', 'o': '18', 'p': '19',
+    'a': '20', 's': '21', 'd': '22', 'f': '23', 'g': '24',
+    'h': '25', 'j': '26', 'k': '27', 'l': '28', 'ñ': '29', ';': '29',
+    'z': '30', 'x': '31', 'c': '32', 'v': '33', 'b': '34', 'n': '35',
+    'm': '36', ',': '37', '.': '38', '/': '39', '-': '40'
   };
 
   const controlKeys = {
@@ -113,6 +115,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const key = e.key.toLowerCase();
     if (keyMap[key] && !pressedKeys.has(key)) {
       pressedKeys.add(key);
+      // Buscar la configuración de tecla - por defecto usa fila superior
       const config = keyConfigurations.find(c => c.id === keyMap[key]);
       if (config) {
         playNote(config);
@@ -143,12 +146,19 @@ document.addEventListener('DOMContentLoaded', function() {
 function showKeyboardHelp() {
   console.log(`
 ╔══════════════════════════════════════════════════════════╗
-║          CONTROLES DE TECLADO QWERTY - 41-TET            ║
+║          CONTROLES DE TECLADO QWERTY - 41-TET v2         ║
 ╠══════════════════════════════════════════════════════════╣
-║   OCTAVA COMPLETA (41 notas)                           ║
-║  ↑ Flecha Arriba   → +8va                                ║
-║  ↓ Flecha Abajo    → -8va                                ║
-║  Espacio           → Reset octava                        ║
+║   OCTAVA COMPLETA (41 notas)                             ║
+║   Fila numérica: 1-0                                     ║
+║   Fila superior: Q-P                                     ║
+║   Fila media: A-Ñ/;                                      ║
+║   Fila inferior: Z-N                                     ║
+║   Fila final: M , . / -                                  ║
+║                                                          ║
+║   CONTROLES:                                             ║
+║   ↑ Flecha Arriba   → +8va                               ║
+║   ↓ Flecha Abajo    → -8va                               ║
+║   Espacio           → Reset octava                       ║
 ╚══════════════════════════════════════════════════════════╝
   `);
 }

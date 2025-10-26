@@ -1,5 +1,5 @@
 // js/keyboard.js
-// Lógica del teclado hexagonal para 41-TET
+// Lógica del teclado hexagonal para 41-TET v2
 
 // Estado de la aplicación
 let currentOctave = 0;
@@ -10,14 +10,12 @@ let combinedScales = new Set();
 
 // Obtener octava real de una tecla basada en su valor
 function getRealOctave(value) {
-  // Las teclas base van del 123 al 191
-  // 123-132 = octava -1 (notas 31-40 de octava anterior)
-  // 133-173 = octava 0 (notas 0-40 de octava central)
-  // 174-191 = octava 1 (notas 0-17 de octava superior)
+  // Nueva lógica para v2:
+  // 133-173 = octava -1 (fila inferior, notas 0-40)
+  // 174-215 = octava 0 (fila superior, notas 0-40 + nota 0 adicional)
   
-  if (value >= 123 && value <= 132) return -1;
-  if (value >= 133 && value <= 173) return 0;
-  if (value >= 174 && value <= 191) return 1;
+  if (value >= 133 && value <= 173) return -1;
+  if (value >= 174 && value <= 215) return 0;
   return 0;
 }
 
